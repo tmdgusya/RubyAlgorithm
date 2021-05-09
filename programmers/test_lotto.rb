@@ -62,15 +62,11 @@ class Lotto
   end
 
   def get_rank(match_count)
-      result =
-        case match_count
-          when 6 then 1
-          when 5 then 2
-          when 4 then 3
-          when 3 then 4
-          when 2 then 5
-          else 6
-        end
+    result = 7 - match_count
+    if result == 7
+      result = 6
+    end
+    result
   end
 
 end
