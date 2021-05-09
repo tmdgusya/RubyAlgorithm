@@ -12,6 +12,21 @@ require 'test/unit'
   답안을 보아 순서는 무관한 거 같음
 =end
 
+class TestLotto < Test::Unit::TestCase
+
+  def setup
+    @solution = Lotto.new
+  end
+
+  def test_solution_test_1
+    assert_equal([3,5], @solution.solution([44, 1, 0, 0, 31, 25], [31, 10, 45, 1, 6, 19]))
+  end
+
+  def test_solution_test_2
+    assert_equal([1, 6], @solution.solution([0, 0, 0, 0, 0, 0], [38, 19, 20, 40, 15, 25]))
+  end
+
+end
 
 class Lotto
 
@@ -67,11 +82,3 @@ class Lotto
   end
 
 end
-
-lotto = [44, 1, 0, 0, 31, 25]
-win_nums = [31, 10, 45, 1, 6, 19]
-result = [3, 5]
-
-solution = Lotto.new
-
-p solution.solution(lotto, win_nums)
