@@ -51,14 +51,7 @@ class Lotto
   end
 
   def get_zero_count(lottos)
-    count = 0
-    lottos.each {
-      |num|
-      if num == 0
-        count+=1
-      end
-    }
-    count
+    count = lottos.count(0)
   end
 
   def get_rank(match_count)
