@@ -36,18 +36,10 @@ class Lotto
     count = 0
     zero_count = get_zero_count(lottos)
 
-    lottos.each { |num|
-      win_nums.each { |win_num|
-        if num == win_num
-          count += 1
-        end
-      }
-    }
+    count = (lottos & win_nums).length
 
     original_rank = get_rank(count)
     after_rank = get_rank(count + zero_count)
-
-    p "Rank : #{original_rank}, #{after_rank}"
 
     if original_rank >= after_rank
       answer = [after_rank, original_rank]
