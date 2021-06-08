@@ -1,3 +1,5 @@
+require 'test/unit'
+
 def add_two_numbers(l1, l2)
     l1_toS = ""
     l2_toS = ""
